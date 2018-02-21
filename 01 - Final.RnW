@@ -137,10 +137,9 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{Extensões e Aplicações do Modelo de Regressão
-  Conway-Maxwell-Poisson para Modelagem de Dados de Contagem}
+\titulo{Uso do Método SKATER Para Agrupamento de Dados sem Informações Espaciais}
 \vspace{2cm}
-\autor{Eduardo Elias Ribeiro Junior}
+\autor{Mateus Costa Soares}
 \local{Curitiba}
 \data{\Sexpr{format(Sys.time(), "%Y")}}
 \instituicao{Universidade Federal do Paraná
@@ -149,7 +148,7 @@
   \par
   Departamento de Estatística
 }
-\orientador[Orientador:]{Prof. Dr. Walmes Marques Zeviani}
+\orientador[Orientador:]{Prof. Dr. Elias Teixeira Krainski}
 \tipotrabalho{Trabalho de Conclusão de Curso}
 % O preambulo deve conter o tipo do trabalho, o objetivo,
 % o nome da instituição e a área de concentração
@@ -268,8 +267,8 @@ library(cmpreg)
 %    \vspace*{\fill}
 %    \centering
 %    \noindent
-%    \textit{ Este trabalho é dedicado às crianças adultas que,\\
-%    quando pequenas, sonharam em se tornar cientistas.} \vspace*{\fill}
+%    \textit{ #############dedicatoria##################\\
+%    ################dedicatoria##############} \vspace*{\fill}
 % \end{dedicatoria}
 % ---
 
@@ -305,37 +304,24 @@ library(cmpreg)
 % resumo em português
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
-  Variáveis aleatórias de contagem são de natureza discreta e
-  representam o número de ocorrências de um evento em um domínio
-  discreto ou contínuo.  Para análise estatística dessas variáveis, o
-  modelo de Poisson é amplamente utilizado. Porém, não são raras as
-  situações de sub ou superdispersão, que inviabilizam o emprego desse
-  modelo. Uma alternativa paramétrica é o modelo COM-Poisson que, com a
-  adição de um parâmetro, contempla diferentes níveis de dispersão.
-  Outras características frequentes em dados de contagem são excesso de
-  contagens nulas e estrutura de correlação entre observações, muitas
-  vezes induzida pelo processo de casualização ou amostragem. Nesses
-  casos os modelos adotados devem ser adaptados. Neste trabalho são
-  exploradas as características da distribuição COM-Poisson e
-  apresentados os modelos de regressão COM-Poisson de efeitos fixos, com
-  modelagem para excesso de zeros e incluindo efeitos aleatórios. O
-  emprego dos modelos COM-Poisson e suas extensões é ilustrado com
-  aplicações e seus resultados são comparados com as abordagens Poisson,
-  Quasi-Poisson e Binomial Negativa (para casos de superdispersão) via
-  níveis descritivos de testes de razão de verossimilhanças, critério de
-  informação de Akaike e predições pontuais e intervalares. O ajuste dos
-  modelos é feito via maximização da verossimilhança. Os resultados
-  mostram que o modelo Poisson é de fato restritivo, com ajustes
-  inadequados na maioria das aplicações. O modelo COM-Poisson, por sua
-  vez, mostrou-se bastante flexível apresentando resultados similares
-  aos obtidos via abordagem semi-paramétrica Quasi-Poisson. As extensões
-  propostas para o modelo COM-Poisson apresentaram resultados
-  satisfatórios, sendo equivalentes às abordagens já consolidadas na
-  literatura.
+  Em estatística espacial, um problema frequente dos pesquisadores é uma base de dados espaciais muito granular 
+  (com muitos objetos), o que pode ocasionar a detecção de tendências locais e a não detecção de tendências globais. 
+  Para contornar esse problema é comum utilizar técnicas de regionalização.
+  
+  Atualmente há quatro tipos de técnicas de regionalização: agrupamento não espacial seguida de processamento espacial, 
+  agrupamento não espacial com uma medida de dissimilaridade ponderada espacialmente, busca de tentativa e erro com 
+  otimização e agrupamento restringida espacialmente e particionamento (GUO, 2008).
+  
+  Neste último grupo estão métodos como o SKATER e o REDCAP, os quais foram testados e se mostraram significativamente 
+  superiores aos outros.
+  
+  Não poderiam, então, esses métodos serem utilizados para agrupamento de dados não espaciais? Se sim, seriam eles 
+  eficientes? Para responder essa pergunta serão utilizadas bases de dados simuladas para comparar a classificação 
+  realizada por esses métodos com métodos usuais de classificação de dados não espaciais, como k-means, agrupamento 
+  hierárquico, entre outros.
 
   \textbf{Palavras-chave}:
-  COM-Poisson; dados de contagem; subdispersão; superdispersão; excesso
-  de zeros; efeitos aleatórios; Binomial Negativa; Quasi-Poisson
+  Clusterização; SKATER; Agrupamento
 \end{resumo}
 
 % ---
